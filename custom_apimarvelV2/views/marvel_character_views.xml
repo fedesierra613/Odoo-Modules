@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="marvel_character_form_view">
+            <field name="name">marvel.character.form</field>
+            <field name="model">marvel.character</field>
+            <field name="arch" type="xml">
+                <form string="Marvel Character Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="thumbnail"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="marvel_character_tree_view">
+            <field name="name">marvel.character.tree</field>
+            <field name="model">marvel.character</field>
+            <field name="arch" type="xml">
+                <tree string="Marvel Character Tree">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="thumbnail"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="marvel_character_action">
+            <field name="name">Marvel Characters</field>
+            <field name="res_model">marvel.character</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="main_menu_marvel_character" name="Marvel Characters"/>
+        <menuitem id="sub_menu_marvel_character" name="Marvel Characters" parent="main_menu_marvel_character" action="marvel_character_action"/>
+    </data>
+</odoo>
